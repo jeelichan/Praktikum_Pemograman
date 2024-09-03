@@ -19,7 +19,7 @@ int main(){
 		float ans1, ans2;
 		ans1=(-b+sqrt(d))/(2*a);
 		ans2=(-b-sqrt(d))/(2*a);
-		cout<<"The solution are x="<<ans1<<" and x="<<ans2;
+		cout<<"The solutions are x="<<ans1<<" and x="<<ans2;
 	}
 	else if(d==0){
 		float ans;
