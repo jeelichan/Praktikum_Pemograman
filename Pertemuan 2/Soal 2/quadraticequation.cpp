@@ -13,8 +13,6 @@ int main(){
 	cout<<"b= ";cin>>b;
 	cout<<"c= ";cin>>c;
 	
-	double d=b*b-(4*a*c);
-	cout<<endl<<d<<endl;
 	if(d>0){
 		double ans1, ans2;
 		ans1=(-b+sqrt(d))/(2*a);
