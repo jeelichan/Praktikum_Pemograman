@@ -1,15 +1,15 @@
 # Variables
 CXX = g++
 CXXFLAGS = -Wall
-TARGET = quadraticequation
-TARGETTEST = quadraticTest
-SRC = quadraticequation.cpp
-SRCTEST = quadraticTest.cpp
+TARGET = fizzBuzz
+TARGETTEST = fizzBuzz
+SRC = fizzBuzz.cpp
+SRCTEST = fizzBuzz.cpp
 
 # Default target: compile the program
 all: $(TARGET)
 
-# Compile the quadraticequation.cpp
+# Compile the fizzBuzz.cpp
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 

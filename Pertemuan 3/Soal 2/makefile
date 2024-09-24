@@ -1,23 +1,32 @@
 # Variables
 CXX = g++
 CXXFLAGS = -Wall
-TARGET = terbesar
-SRC = terbesar.cpp
+TARGET = quadraticequation
+TARGETTEST = quadraticTest
+SRC = quadraticequation.cpp
+SRCTEST = quadraticTest.cpp
 
 # Default target: compile the program
 all: $(TARGET)
 
-# Compile the terbesar.cpp
+# Compile the quadraticequation.cpp
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
-# Run the program in test mode
-test: $(TARGET)
-	./$(TARGET) 
+# Run the program
+run: $(TARGET)
+	./$(TARGET)
 
 # Clean up the compiled files
 clean:
 	rm -f $(TARGET)
+	rm -f $(TARGETTEST)
+
+test: ${TARGETTEST}
+
+$(TARGETTEST): $(SRCTEST)
+	$(CXX) $(CXXFLAGS) -o $(TARGETTEST) $(SRCTEST)
+	./$(TARGETTEST)
 
 # Phony targets to avoid conflicts
 .PHONY: all clean test
