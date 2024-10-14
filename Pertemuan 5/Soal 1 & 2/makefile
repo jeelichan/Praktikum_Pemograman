@@ -1,10 +1,10 @@
 # Variables
 CXX = g++
 CXXFLAGS = -Wall
-TARGET = fizzBuzz
-TARGETTEST = fizzBuzz
-SRC = fizzBuzz.cpp
-SRCTEST = fizzBuzz.cpp
+TARGET = fizzBuzzReverseArray
+TARGETTEST = fizzBuzzReverseArrayTest
+SRC = fizzBuzzReverseArray.cpp
+SRCTEST = fizzBuzzReverseArrayTest.cpp
 
 # Default target: compile the program
 all: $(TARGET)
