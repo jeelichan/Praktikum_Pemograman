@@ -1,0 +1,21 @@
+5
+11010010
+Shampoo Head and Solder
+15000
+3
+10010100
+Ingdomi
+3500
+5
+11101101
+Akwa
+3000
+1
+10010010
+Roiko
+1200
+12
+10111010
+Kengzler Sosis
+12000
+10
