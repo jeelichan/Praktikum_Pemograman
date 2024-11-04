@@ -1,15 +1,15 @@
 # Variables
 CXX = g++
 CXXFLAGS = -Wall
-TARGET = quadraticequation
-TARGETTEST = quadraticTest
-SRC = quadraticequation.cpp
-SRCTEST = quadraticTest.cpp
+TARGET = terbesar
+TARGETTEST = terbesarTest
+SRC = terbesar.cpp
+SRCTEST = terbesarTest.cpp
 
 # Default target: compile the program
 all: $(TARGET)
 
-# Compile the quadraticequation.cpp
+# Compile the terbesar.cpp
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 

@@ -2,27 +2,18 @@
 using namespace std;
 
 int main(){
-	int bil,terbesar;
+	int terbesar,a=1,b=-100,c=543;
 	
-    //Input bilangan pertama
-	cout<<"Input bilangan pertama :";
-	cin>>bil; 
-	terbesar=bil;//Menjadikan bilangan pertama sebagai bilangan terbesar
+	cout<<"Input bilangan pertama :"; cout<<a<<endl;
+	terbesar=a;
 	
-    //Input bilangan kedua
-	cout<<"Input bilangan kedua :";
-	cin>>bil;
-	if(bil>terbesar) terbesar=bil;
-    //Jika bilangan kedua lebih besar dari var terbesar, maka terbesar sekarang adalah bilangan kedua
+	cout<<"Input bilangan kedua :"; cout<<b<<endl;
+	if(b>terbesar) terbesar=b;
 	
-    //Input bilangan ketiga
-	cout<<"Input bilangan ketiga :";
-	cin>>bil;
-	if(bil>terbesar) terbesar=bil;
-    //Jika bilangan ketiga lebih besar dari var terbesar, maka terbesar sekarang adalah bilangan ketiga
+	cout<<"Input bilangan ketiga :"; cout<<c<<endl;
+	if(c>terbesar) terbesar=c;
 	
-    //Output bilangan terbesar
-	cout<<"Bilangan terbesar adalah "<<terbesar;
+	cout<<"Bilangan terbesar adalah "<<terbesar<<endl;
 	
 	return 0;
 }
