@@ -52,7 +52,7 @@ vector<siswa> bubbleSort(vector<siswa> data, int option) {
 }
 
 // Fungsi Binary Search
-void binarySearch(vector<siswa> data,  string nisn) {
+void binarySearch(vector<siswa> data, const string &nisn) {
     data = insertionSort(data, 1); // Pastikan data terurut berdasarkan NISN
     int kiri = 0, kanan = data.size() - 1;
     int ditemukan = -1;
@@ -79,7 +79,7 @@ void binarySearch(vector<siswa> data,  string nisn) {
 }
 
 // Fungsi Ubah Nama
-void ubahNama(vector<siswa> &data, double nilai, string namaBaru) {
+void ubahNama(vector<siswa> &data, double nilai, const string &namaBaru) {
     int ditemukan = -1;
     for (int i = 0; i < data.size(); i++) {
         if (data[i].nilai == nilai) {
@@ -97,56 +97,62 @@ void ubahNama(vector<siswa> &data, double nilai, string namaBaru) {
 }
 
 // Fungsi Menu Pengurutan
-void menuPengurutan(vector<siswa> &data) {
+void sortingTest(vector<siswa> &data) {
     vector<siswa> sortedData;
     int optAlgo, optSort;
+    for(int i = 1; i <= 3; i++){
+        optAlgo = i;
+        for(int j = 1; j <= 2; j++ ){
+            optSort = j;
+            cout << "\nSilahkan pilih algoritma:\n";
+            cout << "1. Insertion Sort\n2. Selection Sort\n3. Bubble Sort\n";
+            cout << "Masukkan pilihan: ";
+            cout << optAlgo << endl;
 
-    cout << "\nSilahkan pilih algoritma:\n";
-    cout << "1. Insertion Sort\n2. Selection Sort\n3. Bubble Sort\n";
-    cout << "Masukkan pilihan: ";
-    cin >> optAlgo;
+            cout << "\nUrutkan data berdasarkan:\n1. NISN\n2. Nilai\n";
+            cout << "Masukkan pilihan: ";
+            cout << optSort << endl;
 
-    cout << "\nUrutkan data berdasarkan:\n1. NISN\n2. Nilai\n";
-    cout << "Masukkan pilihan: ";
-    cin >> optSort;
+            switch (optAlgo) {
+                case 1:
+                    sortedData = insertionSort(data, optSort);
+                    break;
+                case 2:
+                    sortedData = selectionSort(data, optSort);
+                    break;
+                case 3:
+                    sortedData = bubbleSort(data, optSort);
+                    break;
+                default:
+                    cout << "Pilihan tidak valid!" << endl;
+                    return;
+            }
 
-    switch (optAlgo) {
-        case 1:
-            sortedData = insertionSort(data, optSort);
-            break;
-        case 2:
-            sortedData = selectionSort(data, optSort);
-            break;
-        case 3:
-            sortedData = bubbleSort(data, optSort);
-            break;
-        default:
-            cout << "Pilihan tidak valid!" << endl;
-            return;
+            cout << "\nData setelah diurutkan:\n";
+            for (int i = 0; i < sortedData.size(); i++) {
+                cout << "NISN: " << sortedData[i].nisn << ", Nama: " << sortedData[i].nama << ", Nilai: " << sortedData[i].nilai << endl;
+            }
+        }
     }
-
-    cout << "\nData setelah diurutkan:\n";
-    for (int i = 0; i < data.size(); i++) {
-        cout << "NISN: " << data[i].nisn << ", Nama: " << data[i].nama << ", Nilai: " << data[i].nilai << endl;
-    }
+        
 }
 
 // Fungsi Menu Pencarian
-void menuPencarian(vector<siswa> &data) {
-    string targetNISN;
+void searchingTest(vector<siswa> &data) {
+    string targetNISN = "9950310962";
     cout << "Masukkan NISN yang akan dicari: ";
-    cin >> targetNISN;
+    cout << targetNISN;
     binarySearch(data, targetNISN);
 }
 
 // Fungsi Ubah Nama Data
-void ubahNamaData(vector<siswa> &data) {
-    double targetNilai;
-    string namaBaru;
+void ubahNamaTest(vector<siswa> &data) {
+    double targetNilai=60;
+    string namaBaru="Joko";
     cout << "Masukkan nilai yang ingin diubah namanya: ";
-    cin >> targetNilai;
+    cout << targetNilai << endl;
     cout << "Masukkan nama yang baru: ";
-    cin >> namaBaru;
+    cout << namaBaru << endl;
 
     ubahNama(data, targetNilai, namaBaru);
 }
@@ -163,21 +169,22 @@ int main() {
     };
 
     int opt = -1;
-    while (opt != 0) {
+    for(int i = 1; i <= 3; i++) {
+        opt = i;
         cout << "\nPilih menu:\n";
         cout << "1. Urutkan data\n2. Pencarian data berdasarkan NISN\n3. Ubah nama pemilik nilai\n0. Keluar\n";
         cout << "Masukkan pilihan: ";
-        cin >> opt;
+        cout << opt << endl;
 
         switch (opt) {
             case 1:
-                menuPengurutan(data);
+                sortingTest(data);
                 break;
             case 2:
-                menuPencarian(data);
+                searchingTest(data);
                 break;
             case 3:
-                ubahNamaData(data);
+                ubahNamaTest(data);
                 break;
             case 0:
                 cout << "Terima kasih, sampai jumpa!" << endl;
@@ -186,6 +193,5 @@ int main() {
                 cout << "Pilihan tidak valid!" << endl;
         }
     }
-
     return 0;
 }
