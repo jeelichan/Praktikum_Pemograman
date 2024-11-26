@@ -8,6 +8,12 @@ int main(){
     cout<<"Masukkan radius lingkaran:";
     cin>>radius;
 
+    if(radius<0){
+        cout<<"Input tidak valid"<<endl;
+        return 0;
+    }
+
+
     //Luas = pi * radius * radius
     float luas = pi*radius*radius;
     

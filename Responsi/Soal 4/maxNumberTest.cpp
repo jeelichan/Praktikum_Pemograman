@@ -1,13 +1,16 @@
 #include<iostream>
-#include<vector>
 using namespace std;
 
 int main(){
-    vector<int> bilangan={5,10,11,15,60,-10,34,22};
     int banyakData=8;
 
     cout<<"Masukkan banyak data: "<<banyakData<<endl<<endl;
-    
+
+    if(banyakData<=0){
+        cout<<"Input tidak valid"<<endl;
+        return 0;
+    }
+
     int bilangan[8]={5,10,11,15,60,-10,34,22};
 
     for(int i = 0; i < banyakData; i++){

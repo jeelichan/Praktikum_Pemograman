@@ -1,5 +1,4 @@
 #include<iostream>
-#include<vector>
 using namespace std;
 
 int main(){
@@ -8,6 +7,11 @@ int main(){
     cout<<"Masukkan banyak data: "; 
     cin>>banyakData;
     cout<<endl;
+
+    if(banyakData<=0){
+        cout<<"Input tidak valid"<<endl;
+        return 0;
+    }
 
     int bilangan[banyakData];
 
